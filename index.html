@@ -26,6 +26,44 @@
     <!--google icons library-->
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+    <style>
+        html,
+        body {
+            position: relative;
+            height: 100%;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .swiper {
+            width: 100%;
+            padding-top: 50px;
+            padding-bottom: 50px;
+        }
+
+        .swiper-slide {
+            background-position: center;
+            background-size: cover;
+            width: 300px;
+            height: 300px;
+        }
+
+        .swiper-slide img {
+            display: block;
+            width: 100%;
+        }
+
+        .swiper-pagination-bullet {
+            background: linear-gradient(to left, #961eff, dodgerblue);
+            width: 25px;
+            height: 25px;
+        }
+    </style>
 </head>
 
 <body>
@@ -34,6 +72,30 @@
         <div><a href="change.html">المواضيع</a></div>
         <div><a href="about.html">عنا</a></div>
     </nav>
+    <!-- Swiper -->
+    <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <img src="images/nature-1.jpg" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/nature-2.jpg" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/nature-3.jpg" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/nature-4.jpg" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/nature-5.jpg" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/nature-6.jpg" />
+            </div>
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
     <div class="container">
 
         <div class="paragraph">
@@ -64,6 +126,36 @@
         <hr class="c9">
         <div class="c10">صنع في مصر 💕</div>
     </footer>
+    <!-- Swiper -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <!-- Initialize Swiper -->
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            effect: "coverflow",
+            grabCursor: false,
+            centeredSlides: true,
+            slidesPerView: "auto",
+            coverflowEffect: {
+                rotate: 50,
+                stretch: 0,
+                depth: 100,
+                modifier: 1,
+                slideShadows: true,
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                dynamicBullets: true,
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            autoplay: {
+                delay: 2000,
+                disableOnInteraction: false,
+            },
+        });
+    </script>
 
 </body>
 
